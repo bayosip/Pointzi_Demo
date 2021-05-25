@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="450dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/curved_layout"
+    tools:context=".PointziDialog">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_padding_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0733"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_padding_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9267"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_padding_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_padding_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_img_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1813"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_img_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8187"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_img_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.475"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_install_text_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6"/>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_circle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/circle"
+        android:src="@drawable/ic_place_holder_img"
+        app:layout_constraintStart_toEndOf="@id/guideline_img_start"
+        app:layout_constraintEnd_toStartOf="@id/guideline_img_end"
+        app:layout_constraintTop_toBottomOf="@id/guideline_padding_top"
+        app:layout_constraintBottom_toTopOf="@id/guideline_img_bottom"/>
+
+    <TextView
+        android:id="@+id/txt_time_of_install"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:text="@string/installation_stamp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:lineSpacingExtra="2sp"
+        app:layout_constraintStart_toEndOf="@id/guideline_padding_start"
+        app:layout_constraintEnd_toStartOf="@id/guideline_padding_end"
+        app:layout_constraintTop_toBottomOf="@id/guideline_install_text_top"/>
+
+    <TextView
+        android:id="@+id/txt_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/current_time"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:lineSpacingExtra="2sp"
+        app:layout_constraintStart_toEndOf="@id/guideline_padding_start"
+        app:layout_constraintEnd_toStartOf="@id/guideline_padding_end"
+        app:layout_constraintBottom_toTopOf="@id/txt_current_time"/>
+
+    <TextView
+        android:id="@+id/txt_current_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hh:mm:ss dd MMM yyyy"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:lineSpacingExtra="2sp"
+        app:layout_constraintStart_toEndOf="@id/guideline_padding_start"
+        app:layout_constraintEnd_toStartOf="@id/guideline_padding_end"
+        app:layout_constraintBottom_toTopOf="@id/guideline_padding_bottom"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
