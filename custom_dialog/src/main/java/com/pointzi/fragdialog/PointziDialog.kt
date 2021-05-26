@@ -3,7 +3,9 @@ package com.pointzi.fragdialog
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable
+import android.os.Build
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.util.Log
 import android.view.*
 import androidx.fragment.app.DialogFragment
@@ -157,6 +159,28 @@ class PointziDialog private constructor(): DialogFragment() {
 
     override fun onResume() {
         super.onResume()
+        if(Build.VERSION.SDK_INT<30){
+            fixWindowSize()
+        }else{
+            fixWindowSizeApi30()
+        }
+    }
+
+    private fun fixWindowSize(){
+        val displayMetrics = DisplayMetrics()
+        activity?.getWindowManager()?.getDefaultDisplay()?.getMetrics(displayMetrics)
+        val height = displayMetrics.heightPixels
+        val width = displayMetrics.widthPixels
+
+        val windowWidth = width!! * 0.65
+        val windowHeight = height!!/2
+
+        Log.d(TAG, "onResume: w: $width , h: $height")
+        val window = dialog!!.window ?: return
+        window.setLayout(windowWidth.toInt(),windowHeight)
+    }
+
+    private fun fixWindowSizeApi30(){
         val displayMetrics = activity?.getWindowManager()?.maximumWindowMetrics
         val height = displayMetrics?.bounds?.height()
         val width = displayMetrics?.bounds?.width()
