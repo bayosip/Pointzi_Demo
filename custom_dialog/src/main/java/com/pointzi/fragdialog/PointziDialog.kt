@@ -58,6 +58,7 @@ class PointziDialog private constructor(): DialogFragment() {
         val view: View = inflater.inflate(R.layout.fragment_dialog, container, true)
         dialog!!.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog!!.window!!.setBackgroundDrawableResource(R.drawable.translucent_fifty_percent)
+        dialog!!.window?.getAttributes()?.windowAnimations = R.style.DialogAnimation
         isCancelable = true
         return view
     }
