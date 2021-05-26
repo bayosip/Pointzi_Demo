@@ -87,7 +87,7 @@ class PointziDialog private constructor(): DialogFragment() {
                 imgCircle.setImageResource(imgId!!)
                 imgCircle.invalidate()
                 val drawable = imgCircle.drawable
-                imgCircle.setImageDrawable(resizeDrawable(drawable, width,height))
+                imgCircle.setImageDrawable(resizeDrawable(drawable))
             }
 
             if (imgBitmap!=null){
@@ -101,7 +101,7 @@ class PointziDialog private constructor(): DialogFragment() {
         }
     }
 
-    private fun resizeDrawable(image: Drawable, dstWidth:Int, dstHeight:Int): Drawable {
+    private fun resizeDrawable(image: Drawable): Drawable {
         val bitmap = Bitmap.createBitmap(
             image.getIntrinsicWidth(),
             image.getIntrinsicHeight(),
