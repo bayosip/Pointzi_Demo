@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.*
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import com.bumptech.glide.Glide
@@ -180,6 +181,7 @@ class PointziDialog private constructor(): DialogFragment() {
         window.setLayout(windowWidth.toInt(),windowHeight)
     }
 
+    @RequiresApi(30)
     private fun fixWindowSizeApi30(){
         val displayMetrics = activity?.getWindowManager()?.maximumWindowMetrics
         val height = displayMetrics?.bounds?.height()
