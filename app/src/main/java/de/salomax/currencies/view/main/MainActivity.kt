@@ -15,7 +15,7 @@ import androidx.core.text.HtmlCompat
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.snackbar.Snackbar
-import com.pointzi.fragdialog.FabBuilder
+import com.pointzi.fragdialog.FabToDialogBuilder
 import de.salomax.currencies.R
 import de.salomax.currencies.databinding.ActivityMainBinding
 import de.salomax.currencies.util.humanReadableFee
@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
         observe()
 
         //call my library
-        FabBuilder("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg", this, binding.root).attachFAB()
+        FabToDialogBuilder("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg", this, binding.root).attachFAB()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

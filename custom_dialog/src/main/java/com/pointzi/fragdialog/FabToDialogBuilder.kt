@@ -8,8 +8,8 @@ import androidx.fragment.app.FragmentActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
-class FabBuilder private constructor(val activity: FragmentActivity,
-                                     val mainView: ViewGroup) {
+class FabToDialogBuilder private constructor(val activity: FragmentActivity,
+                                             val mainView: ViewGroup) {
 
     private var url:String?=null
     private var imgId:Int?=null
